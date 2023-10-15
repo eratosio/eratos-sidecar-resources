@@ -1,26 +1,12 @@
-
-
-install.packages('reticulate')
-
-reticulate::install_python(version = '3.9')
-reticulate::py_install("https://releases.eratos.com/sdk/python/eratos-python-latest.zip")
-
-eratosAdapter <- reticulate::import("eratos.adapter")
-
-reticulate::use_condaenv("eratoslabs_R", required=TRUE)
-#library(reticulate)
 library(rjson)
 library(reticulate) 
 library(ggplot2)
 np<-import("numpy")
+
 eratosAdapter <- reticulate::import("eratos.adapter")
 eratosCreds  <- reticulate::import("eratos.creds")
 
-
-path_to_eratos_creds = "eratos_creds_template\\o-lab-creds.json"
-creds = fromJSON(file = path_to_eratos_creds)
-
-at <- eratosCreds$AccessTokenCreds(creds$key[1], creds$secret[1])
+at <- eratosCreds$AccessTokenCreds(Sys.getenv("ERATOS_KEY"), Sys.getenv("ERATOS_SECRET"))
 ad <- eratosAdapter$Adapter(at)
 
 # Pull a dataset resource in Eratos via it's unique ern more can be found on the Eratos Marketplace
