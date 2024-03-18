@@ -1,0 +1,14 @@
+# Requirements file for Python environment
+
+geopandas==0.10.2          # Spatial data wrangling
+scipy==1.7.3               # Computations
+scikit-learn==0.24.2       # Machine learning
+matplotlib==3.5.1          # 2D plotting
+seaborn==0.11.2            # Statistical data visualisation
+keplergl==0.2.2            # Dashboarding with Kepler
+dash==2.1.0                # Dashboarding with Dash
+plotly==5.3.1              # Dashboarding with Plotly
+folium==0.12.1             # Map visualisation
+pysal==2.5.0               # Core spatial data structures
+gdal==3.4.0                # Raster and vectorial data models conversion
+shapely==1.8.0             # Spatial shapes and polygons
