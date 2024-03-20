@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from  eratos_hackathon_helper import *
 
 
-creds_path = r"C:\Users\Quinten\Documents\Eratos_tok\ingest_Creds.json"
+creds_path = r"path_to_your_Creds"
 
 # Opening JSON file
 f = open(creds_path)
