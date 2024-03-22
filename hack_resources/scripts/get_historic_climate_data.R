@@ -6,11 +6,7 @@ np<-import("numpy")
 eratosAdapter <- reticulate::import("eratos.adapter")
 eratosCreds  <- reticulate::import("eratos.creds")
 
-
-# Read JSON file
-creds <- fromJSON(file = "~/eratos-sidecar-resources/mycreds.json")
-
-at <- eratosCreds$AccessTokenCreds(creds$key[1], creds$secret[1])
+at <- eratosCreds$AccessTokenCreds(Sys.getenv("ERATOS_KEY"), Sys.getenv("ERATOS_SECRET"))
 ad <- eratosAdapter$Adapter(at)
 
 # Pull a dataset resource in Eratos via it's unique ern more can be found on the Eratos Marketplace
